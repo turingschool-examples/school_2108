@@ -15,5 +15,11 @@ class School
 
   def end_time
     @start_time + @hours_in_school_day
+  end
+
+  def full_time
+    if @hours_in_school_day >= 7
+      true
+    else false
   end 
 end

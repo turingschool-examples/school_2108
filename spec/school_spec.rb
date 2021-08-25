@@ -3,7 +3,7 @@ require './lib/school'
 
 RSpec.describe School do
   context 'Iteration 1' do
-    xit 'exists' do
+    it 'exists' do
       school = School.new('9:00', 7)
 
       expect(school).to be_a(School)
@@ -46,5 +46,15 @@ RSpec.describe School do
       expect(school_1.end_time).to eq('16:00')
       expect(school_2.end_time).to eq('12:00')
     end
+  end
+
+  context 'Iteration 3' do
+    it 'can tell us if full time' do
+      school_1 = School.new('9:00', 7)
+      school_2 = School.new('9:00', 3)
+
+      expect(school_1.full_time).to be(true)
+      expect(school_2.full_time).to be(false)
+    end 
   end
 end
