@@ -55,6 +55,14 @@ RSpec.describe School do
 
       expect(school_1.full_time).to be(true)
       expect(school_2.full_time).to be(false)
-    end 
+    end
   end
+
+  context 'Iteration 4' do
+    it 'can convert end time to clock time' do
+      school = School.new('9:00', 7)
+
+      expect(school.convert_end_time_to_clock_time).to be('4:00')
+    end
+  end 
 end
