@@ -25,7 +25,11 @@ class School
     end
   end
 
-  def standard_student_names
-    @student_names.capitalize 
+  def standard_student_names(names)
+    @student_names.capitalize(names)
   end
+
+  def convert_end_time_to_clock_time
+    "#{@end_time.to_i - 12}:00"
+  end 
 end

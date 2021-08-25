@@ -56,7 +56,21 @@ RSpec.describe School do
     end
 
     it 'can standardize student names' do
+      school = school.new('9:00', 7)
+
+      school.add_student_name('megan')
+
+      expect(school.student_names) to eq 'Aurora'
+      expect(school.student_names) to eq 'Tim'
       expect(school.student_names) to eq 'Megan'
+    end
+  end
+
+  context 'Iteration 4' do
+    it 'can convert time' do
+      school = School.new('9:00',7)
+
+      expect(school.convert_end_time_to_clock_time) to eq('4:00')
     end
   end
 end
