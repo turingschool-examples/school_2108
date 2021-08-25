@@ -47,4 +47,28 @@ RSpec.describe School do
       expect(school_2.end_time).to eq('12:00')
     end
   end
+
+  context 'Iteration 3' do
+    it 'can determine is school is full-time' do
+      school = School.new('9:00', 7)
+      expect(school.is_full_time?).to eq true
+    end
+
+    it 'can return list of students names capitalized' do
+      school = School.new('9:00', 7)
+
+      school.add_student_name('Aurora')
+      school.add_student_name('tim')
+      school.add_student_name('megan')
+      expect(school.standard_student_names).to eq ["Aurora", "Tim", "Megan"]
+    end
+  end
+
+  context 'Iteration 4' do
+    it 'will return the end time in standard format' do
+      school = School.new('9:00', 7)
+
+      expect(school.convert_end_time_to_clock_time).to eq "4:00"
+    end
+  end
 end
