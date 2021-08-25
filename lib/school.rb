@@ -35,4 +35,7 @@ class School
     return standard_student_names
   end
 
+  def convert_end_time_to_clock_time
+    clock_time = (((@hours_in_school_day + @start_time.to_i) - 12).to_s + ":00")
+  end
 end

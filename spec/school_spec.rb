@@ -62,4 +62,10 @@ RSpec.describe School do
       expect(school.standard_student_names).to eq(['Aurora', 'Tim', 'Megan'])
     end
   end
+  context 'Iteration 4' do
+    it 'sees if school is full time' do
+      school = School.new('9:00', 7)
+      expect(school.convert_end_time_to_clock_time).to eq("4:00")
+    end
+  end
 end
