@@ -3,25 +3,25 @@ require './lib/school'
 
 RSpec.describe School do
   context 'Iteration 1' do
-    xit 'exists' do
+    it 'exists' do
       school = School.new('9:00', 7)
 
       expect(school).to be_a(School)
     end
 
-    xit 'has a start time' do
+    it 'has a start time' do
       school = School.new('9:00', 7)
 
       expect(school.start_time).to eq('9:00')
     end
 
-    xit 'has hours in a school day' do
+    it 'has hours in a school day' do
       school = School.new('9:00', 7)
 
       expect(school.hours_in_school_day).to eq(7)
     end
 
-    xit 'starts with no student names' do
+    it 'starts with no student names' do
       school = School.new('9:00', 7)
 
       expect(school.student_names).to eq([])
