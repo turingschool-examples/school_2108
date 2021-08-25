@@ -12,6 +12,7 @@ class School
 
 #Iteration 2
   def add_student_name(name)
+    name.to_s
     @student_names << name
   end
 
@@ -39,7 +40,7 @@ class School
     @standard_names = []
 
     @student_names.each do |name|
-      if name.is_a? String #ensures the name will be a string before trying to capitalize. if it's not, we'll skip it.
+      if name.is_a? String #ensures the name will be a string before trying to capitalize. otherwise, it will be skipped.
         @standard_names << name.capitalize
       end
     end

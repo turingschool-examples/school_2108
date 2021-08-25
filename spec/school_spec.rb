@@ -75,4 +75,23 @@ RSpec.describe School do
       expect(school.convert_end_time_to_clock_time).to eq('4:00')
     end
   end
+
+  context 'Edge Cases' do
+    it 'accounts for end times after midnight' do
+      school_3 = School.new('20:00', 10)
+
+      expect(school_3.end_time).to eq('6:00')
+    end
+
+    it 'skips names that are not strings' do
+      school_3 = School.new('20:00', 10)
+
+      school_3.add_student_name(15.26)
+      school_3.add_student_name('Aurora')
+      school_3.add_student_name('tim')
+      school_3.add_student_name('megan')
+
+      expect(school_3.standard_student_names).to eq(["Aurora", "Tim", "Megan"])
+    end
+  end
 end
