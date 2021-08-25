@@ -2,26 +2,27 @@ require 'rspec'
 require './lib/school'
 
 RSpec.describe School do
+  describe "#initialize" do
   context 'Iteration 1' do
-    xit 'exists' do
-      school = School.new('9:00', 7)
+      it 'exists' do
+        school = School.new('9:00', 7)
 
-      expect(school).to be_a(School)
-    end
+        expect(school).to be_a(School)
+      end
 
-    xit 'has a start time' do
-      school = School.new('9:00', 7)
+      it 'has a start time' do
+        school = School.new('9:00', 7)
 
       expect(school.start_time).to eq('9:00')
-    end
+      end
 
-    xit 'has hours in a school day' do
+    it 'has hours in a day' do
       school = School.new('9:00', 7)
 
       expect(school.hours_in_school_day).to eq(7)
     end
 
-    xit 'starts with no student names' do
+    it 'starts with no student names' do
       school = School.new('9:00', 7)
 
       expect(school.student_names).to eq([])
@@ -29,7 +30,7 @@ RSpec.describe School do
   end
 
   context 'Iteration 2' do
-    xit 'can add student names' do
+    it 'can add student names' do
       school = School.new('9:00', 7)
 
       school.add_student_name('Aurora')
