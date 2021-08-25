@@ -49,7 +49,7 @@ RSpec.describe School do
   end
 
   context 'Iteration 3' do
-    xit 'is school full time' do
+    it 'is school full time' do
       school_1 = School.new('9:00', 7)
       school_2 = School.new('9:00', 3)
 
