@@ -20,6 +20,21 @@ class School
     time_end = int_time + @hours_in_school_day
     return "#{time_end}:00"
   end
-  
 
+  def is_full_time?
+    if @hours_in_school_day <= 4
+      return false
+    else
+      return true
+    end
+  end
+
+  def standard_student_names
+    standard_names = []
+    @student_names.each do |student_name|
+      standard_names << student_name.capitalize
+    end
+    return standard_names
+
+  end
 end
