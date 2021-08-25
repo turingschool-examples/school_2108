@@ -62,8 +62,21 @@ RSpec.describe School do
       school.add_student_name('tIM')
       school.add_student_name('mEgAn')
 
-      school.standard_student_names
-      expect(school.student_names).to eq(['Aurora', 'Tim', 'Megan'])
+      expect(school.standard_student_names).to eq(['Aurora', 'Tim', 'Megan'])
+    end
+  end
+  context 'Iteration 4' do
+    it 'can convert end time from military time to standard clock time' do
+      school = School.new('9:00', 7)
+      school.end_time
+
+      expect(school.convert_end_time_to_clock_time).to eq("4:00")
+    end
+    it 'can avoid conversion if school ends before 1PM' do
+      school = School.new('9:00', 3)
+      school.end_time
+
+      expect(school.convert_end_time_to_clock_time).to eq("12:00")
     end
   end
 end
