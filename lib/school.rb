@@ -9,8 +9,12 @@ class School
     @student_names = []
   end
 
+  def student_names
+    @student_names
+  end
+
   def add_student_name(name)
-    @student_names << name 
+    @student_names << name
   end
 
 end
