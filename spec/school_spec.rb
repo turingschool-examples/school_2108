@@ -3,25 +3,25 @@ require './lib/school'
 
 RSpec.describe School do
   context 'Iteration 1' do
-    xit 'exists' do
+    it 'exists' do
       school = School.new('9:00', 7)
 
       expect(school).to be_a(School)
     end
 
-    xit 'has a start time' do
+    it 'has a start time' do
       school = School.new('9:00', 7)
 
       expect(school.start_time).to eq('9:00')
     end
 
-    xit 'has hours in a school day' do
+    it 'has hours in a school day' do
       school = School.new('9:00', 7)
 
       expect(school.hours_in_school_day).to eq(7)
     end
 
-    xit 'starts with no student names' do
+    it 'starts with no student names' do
       school = School.new('9:00', 7)
 
       expect(school.student_names).to eq([])
@@ -29,7 +29,7 @@ RSpec.describe School do
   end
 
   context 'Iteration 2' do
-    xit 'can add student names' do
+    it 'can add student names' do
       school = School.new('9:00', 7)
 
       school.add_student_name('Aurora')
@@ -45,6 +45,23 @@ RSpec.describe School do
 
       expect(school_1.end_time).to eq('16:00')
       expect(school_2.end_time).to eq('12:00')
+    end
+  end
+
+  context 'Iteration 3' do
+    it 'is full time' do
+      school_1 = School.new('9:00', 7)
+      school_2 = School.new('9:00', 3)
+
+      expect(school.is_full_time?).to be true
+      expect(school.is_full_time?).to be false
+    end
+
+#Not done writing this test. Ran out of time
+    xit 'can add student names' do
+
+
+      expect(school.standard_student_names).to eq(["Aurora", "Tim", "Megan"])
     end
   end
 end
