@@ -27,4 +27,16 @@ class School
      name.capitalize
     end
  end
+
+  def convert_end_time_to_clock_time
+    @start_time = @start_time.delete(":00").to_i
+    military = @start_time + @hours_in_school_day
+    if military > 12
+      civilian = military - 12
+    else
+      civilian = military
+    end
+    civilian.to_s
+    civilian = "#{civilian}#{":00"}"
+  end
 end

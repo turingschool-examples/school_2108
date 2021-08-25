@@ -66,4 +66,14 @@ RSpec.describe School do
       expect(school.standard_student_names).to eq(results)
     end
   end
+
+  context 'Iteration 4' do
+    it 'can calculate end time' do
+      school_1 = School.new('9:00', 7)
+      school_2 = School.new('9:00', 3)
+
+      expect(school_1.convert_end_time_to_clock_time).to eq('4:00')
+      expect(school_2.convert_end_time_to_clock_time).to eq('12:00')
+    end
+  end
 end
