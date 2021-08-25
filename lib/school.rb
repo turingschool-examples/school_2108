@@ -35,6 +35,18 @@ class School
       standard_names << student_name.capitalize
     end
     return standard_names
+  end
 
+  def convert_end_time_to_clock_time
+    str_time = start_time.gsub(/\D/, "")
+    str_time = str_time.delete("0")
+    int_time = str_time.to_i
+    time_end = int_time + @hours_in_school_day
+    if time_end <= 12
+      return "#{time_end}:00"
+    else
+      time_end -= 12
+      return "#{time_end}:00"
+    end
   end
 end
