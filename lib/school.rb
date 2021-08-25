@@ -26,7 +26,7 @@ class School
   end
 
   def convert_end_time_to_clock_time
-    
+    "#{@start_time[0].to_i + @hours_in_school_day - 12}:00"
   end
 
 
