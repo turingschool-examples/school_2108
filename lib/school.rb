@@ -19,6 +19,7 @@ class School
     initial_hours = old_time[0].to_i
     total_hours = initial_hours + hours_in_school_day
     end_time.insert(0, total_hours.to_s)
+    @end_time = end_time
   end
 
   def is_full_time?
@@ -30,8 +31,25 @@ class School
   end
 
   def standard_student_names
+    standardized_names = []
     @student_names.each do |student|
-      student.capitalize
+      standardized_names << student.capitalize()
     end
+    return standardized_names
+  end
+
+  def convert_end_time_to_clock_time
+    shortened_time = @end_time.delete(":").to_i
+    final_time = ""
+      if shortened_time >= 1300
+        standard_time = (shortened_time - 1200).to_s
+        final_time.insert(0, standard_time)
+        final_time.insert(-3, ":")
+      else
+        standard_time = (shortened_time).to_s
+        final_time.insert(0, standard_time)
+        final_time.insert(-3, ":")
+      end
+    return final_time
   end
 end
